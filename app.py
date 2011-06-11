@@ -32,7 +32,7 @@ def new_item():
 
 # debug(True)
 # run(reloader=True)
-run()
+# run()
 
 #if __name__ == '__main__':
 #    import bottle
