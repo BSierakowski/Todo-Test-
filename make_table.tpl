@@ -9,4 +9,5 @@
     </tr>
 %end
 </table>
- 
+
+<p><a href="new">Post a new item</a></p>
