@@ -9,8 +9,7 @@ def todo_list():
     result = c.fetchall()
     c.close()
     return template('make_table', rows=result)
-    
-    
+  
 @route('/new', method='GET')
 def new_item():
 
@@ -31,8 +30,12 @@ def new_item():
     else:
         return template('new_task.tpl')
 
-if __name__ == '__main__':
-    import bottle
-    app = bottle.app()
-    bottle.debug(True)
-    bottle.run(app=app,host='localhost', port=8080,reloader=True)
+# debug(True)
+# run(reloader=True)
+run()
+
+#if __name__ == '__main__':
+#    import bottle
+#    app = bottle.app()
+#    bottle.debug(True)
+#    bottle.run(app=app,host='localhost', port=8080,reloader=True)
