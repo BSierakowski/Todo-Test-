@@ -90,7 +90,7 @@ def mistake(code):
         
 #debug(True)
 #run(reloader=True)
-run()
+
 
 #if __name__ == '__main__':
 #    import bottle
