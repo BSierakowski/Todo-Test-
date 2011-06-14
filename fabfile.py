@@ -28,5 +28,3 @@ def stophttpd():
 def starthttpd():
     "Starting HTTPD"
     run("sudo httpd -k start")
-   
-
