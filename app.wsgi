@@ -10,7 +10,7 @@ wsgi_dir=os.path.dirname(__file__)
 sys.path = [wsgi_dir] + sys.path
 
 # ... build or import your bottle application here ...
-from app import *
+import app
 
 # Do NOT use bottle.run() with mod_wsgi
 application = bottle.default_app()
