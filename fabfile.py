@@ -13,6 +13,7 @@ def start():
 def prepare_deploy():
     # Tests here :)
     local("git add . && git commit")
+    local("git push origin master")
       
 def reboot():
     "Reboot httpd"
@@ -27,16 +28,4 @@ def starthttpd():
     run("sudo httpd -k start")
    
 def pull():
-    run("cd /var/www/app/; git pull origin master")
-        
-def reset(repo, hash):
-    """
-    Reset all git repositories to specified hash.
-    Usage:
-        fab reset:repo=my_repo,hash=etcetc123
-    """
-    require("fab_hosts", provided_by=[production])
-    config.hash = hash
-    config.repo = repo
-    invoke(git_reset)
-    
+    run("cd /var/www/app/; git pull origin master")   
