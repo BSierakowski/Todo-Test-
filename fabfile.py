@@ -3,7 +3,7 @@ from fabric.api import *
 from fabric.contrib.console import confirm
 
 env.key_filename = ['/home/brian/Downloads/briankp.pem']
-env.user = ['ec2-user']
+env.user = 'ec2-user'
 env.hosts = ['cibah.com']
 
 
@@ -13,14 +13,18 @@ def start():
 def prepare_deploy():
     # Tests here :)
     local("git add . && git commit")
-    
-def git_reset():
-    "Resets the repository to specified version."
-    run("cd /var/www/app/; git reset --hard $(hash)")
-   
+      
 def reboot():
     "Reboot httpd"
     sudo("httpd -k restart")
+   
+def stophttpd():
+    "Stopping HTTPD"
+    run("sudo httpd -k stop")
+    
+def starthttpd():
+    "Starting HTTPD"
+    run("sudo httpd -k start")
    
 def pull():
     run("cd /var/www/app/; git pull origin master")
