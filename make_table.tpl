@@ -2,7 +2,7 @@
 <p>The open items are as follows:</p>
 <table border="1">
 %for r in rows:
-    <p>{{r}}</p>
+<p>ID:{{r}}, task:{{r}}, <a href="/edit/{{r}}">Edit Item</a></p>
 %end
 </table>
 
