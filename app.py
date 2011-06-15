@@ -88,5 +88,5 @@ def mistake(code):
     return 'There is something wrong!' 
         
         
-debug(True)
-run(reloader=True)
+#debug(True)
+#run(reloader=True)
