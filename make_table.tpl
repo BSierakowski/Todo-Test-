@@ -1,8 +1,15 @@
 %#Template to generate a HTML table from a list of tuples (or a list of lists, or tuples of tuples...)
-<p>The open items are as follows:</p>
+<p>Open items todo:</p>
 <table border="1">
 %for r in rows:
-<p><b>ID:</b>{{r[0]}}, <b>Task:</b>{{r[1]}}, <a href="/edit/{{r[0]}}">Edit Item</a></p>
+<p><b>{{r[0]}}:</b> {{r[1].rstrip(',')}} | Mark as Complete | <a href="/edit/{{r[0]}}">Edit Item</a></p>
+%end
+</table>
+
+<p>Completed items:</p>
+<table border="1">
+%for c in comp:
+<p><b>{{c[0]}}:</b> {{c[1].rstrip(',')}} | Mark as New | <a href="/edit/{{c[0]}}">Edit Item</a></p>
 %end
 </table>
 

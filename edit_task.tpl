@@ -9,5 +9,6 @@
 </select>
 <br />
 <input type="submit" name="save" value="save">
+<a href="/todo">cancel</a>
 </form>
 

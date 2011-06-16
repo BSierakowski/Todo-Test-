@@ -7,8 +7,10 @@ def todo_list():
     c = conn.cursor()
     c.execute("SELECT id, task FROM todo WHERE status LIKE '1'")
     result = c.fetchall()
+    c.execute("SELECT id, task FROM todo WHERE status LIKE '0'")
+    completed_result = c.fetchall()
     c.close()
-    return template('make_table', rows=result)
+    return template('make_table', rows=result, comp=completed_result)
   
 @route('/new', method='GET')
 def new_item():
